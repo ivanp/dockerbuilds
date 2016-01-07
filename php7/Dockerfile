@@ -1,7 +1,7 @@
 FROM ubuntu:latest
-MAINTAINER Ivan <ivanpetrus@gmail.com>
+MAINTAINER Ivan <ivan@marsudirini-bks.sch.id>
 
-RUN apt-get update && apt-get install -y software-properties-common
+RUN echo PHP 7.01 && apt-get update && apt-get install -y software-properties-common
 
 RUN locale-gen en_US.UTF-8
 ENV LANG en_US.UTF-8
@@ -13,7 +13,8 @@ RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 4F4EA0AAE5267A6C
 RUN apt-get update && apt-get install -y \
 	php7.0-cli php7.0-common php7.0-curl php7.0-fpm php7.0-gd php7.0-mcrypt \
 	php7.0-mysql php7.0-pgsql php7.0-sqlite php7.0-readline php7.0-opcache \
-	php7.0-bz2 php7.0-json
+	php7.0-bz2 php7.0-json php7.0-dev build-essential php-pear git pkg-config libssl-dev libsasl2-dev && \
+	pecl install mongodb
 
 
 ADD php-fpm.conf /etc/php/7.0/fpm/php-fpm.conf

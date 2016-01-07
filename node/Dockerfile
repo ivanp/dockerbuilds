@@ -1,5 +1,5 @@
 FROM ubuntu:latest
-MAINTAINER Ivan <ivanpetrus@gmail.com>
+MAINTAINER Ivan <ivan@marsudirini-bks.sch.id>
 
 RUN apt-get update && apt-get install -y software-properties-common
 
@@ -8,9 +8,9 @@ ENV LANG en_US.UTF-8
 
 RUN apt-get install -y curl
 
-RUN curl -sL https://deb.nodesource.com/setup_5.x | sudo -E bash -
+RUN echo Node 5.4 && \
+    curl -sL https://deb.nodesource.com/setup_5.x | sudo -E bash -
 
-
-RUN apt-get install -y nodejs build-essential
+RUN apt-get install -y nodejs build-essential git && apt-get autoclean
 
 WORKDIR /app

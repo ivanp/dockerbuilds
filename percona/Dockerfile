@@ -7,7 +7,7 @@
 FROM ubuntu:latest
 
 # File Author / Maintainer
-MAINTAINER Ivan <ivanpetrus@gmail.com>
+MAINTAINER Ivan <ivan@marsudirini-bks.sch.id>
 
 # Adding my.cnf File
 COPY templates/my.cnf /etc/my.cnf

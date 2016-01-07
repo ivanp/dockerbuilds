@@ -1,4 +1,5 @@
 FROM flurdy/activator
+MAINTAINER Ivan <ivan@marsudirini-bks.sch.id>
 
 RUN adduser --disabled-password --gecos '' scala && \
     adduser scala sudo && \

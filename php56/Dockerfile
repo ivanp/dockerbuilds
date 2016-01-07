@@ -1,5 +1,5 @@
 FROM ubuntu:latest
-MAINTAINER Ivan <ivanpetrus@gmail.com>
+MAINTAINER Ivan <ivan@marsudirini-bks.sch.id>
 
 RUN apt-get update && apt-get install -y software-properties-common
 
