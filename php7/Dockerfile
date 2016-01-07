@@ -1,0 +1,21 @@
+FROM ubuntu:latest
+MAINTAINER Ivan <ivanpetrus@gmail.com>
+
+RUN apt-get update && apt-get install -y software-properties-common
+
+RUN locale-gen en_US.UTF-8
+ENV LANG en_US.UTF-8
+
+RUN add-apt-repository -y ppa:ondrej/php-7.0
+
+RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 4F4EA0AAE5267A6C
+
+RUN apt-get update && apt-get install -y \
+	php7.0-cli php7.0-common php7.0-curl php7.0-fpm php7.0-gd php7.0-mcrypt \
+	php7.0-mysql php7.0-pgsql php7.0-sqlite php7.0-readline php7.0-opcache \
+	php7.0-bz2 php7.0-json
+
+
+ADD php-fpm.conf /etc/php/7.0/fpm/php-fpm.conf
+
+CMD ["php-fpm7.0", "-F"]
