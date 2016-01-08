@@ -16,7 +16,7 @@ RUN apt-get update && apt-get install -y \
 	pecl install mongodb && \
     apt-get clean
 
-RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer &&
+RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer && \ 
     chmod 755 /usr/local/bin/composer
     
 ADD php-fpm.conf /etc/php5/fpm/php-fpm.conf
