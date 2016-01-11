@@ -16,9 +16,10 @@ RUN apt-get update && apt-get install -y \
 	pecl install mongodb && \
     apt-get clean
 
-RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer && \ 
-    chmod 755 /usr/local/bin/composer
-    
+RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer && \
+    wget -O /usr/local/bin/phpunit https://phar.phpunit.de/phpunit.phar && \
+    chmod 755 /usr/local/bin/composer /usr/local/bin/phpunit
+
 ADD php-fpm.conf /etc/php5/fpm/php-fpm.conf
 
 CMD ["php5-fpm", "-F"]
