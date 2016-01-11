@@ -12,7 +12,7 @@ RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 4F4EA0AAE5267A6C
 
 RUN apt-get update && apt-get install -y \
 	php5-cli php5-common php5-curl php5-fpm php5-gd php5-mcrypt php5-mysql php5-pgsql php5-sqlite php5-readline \
-	php5-xdebug php5-mongo php5-dev build-essential pkg-config libssl-dev libsasl2-dev && \
+	php5-xdebug php5-mongo php5-dev build-essential pkg-config libssl-dev libsasl2-dev git && \
 	pecl install mongodb && \
     apt-get clean
 
