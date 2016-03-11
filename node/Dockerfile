@@ -3,12 +3,12 @@ MAINTAINER Ivan <ivan@marsudirini-bks.sch.id>
 
 RUN apt-get update && apt-get install -y software-properties-common
 
-RUN locale-gen en_US.UTF-8 
+RUN locale-gen en_US.UTF-8
 ENV LANG en_US.UTF-8
 
 RUN apt-get install -y curl
 
-RUN echo Node 5.4 && \
+RUN echo Node 5.8 && \
     curl -sL https://deb.nodesource.com/setup_5.x | sudo -E bash -
 
 RUN apt-get install -y nodejs build-essential git && apt-get autoclean
