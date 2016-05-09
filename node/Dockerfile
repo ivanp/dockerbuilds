@@ -9,7 +9,7 @@ ENV LANG en_US.UTF-8
 RUN echo Node 5.11 && \
     apt-get update && \
     apt-get install -y curl && \
-    curl -sL https://deb.nodesource.com/setup_5.x | sudo -E bash -
+    curl -sL https://deb.nodesource.com/setup_5.x | bash -
 
 RUN apt-get install -y nodejs build-essential git && apt-get autoclean
 
