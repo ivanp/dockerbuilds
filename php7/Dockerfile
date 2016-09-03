@@ -3,10 +3,7 @@ MAINTAINER Ivan <ivan@marsudirini-bks.sch.id>
 
 RUN echo PHP 7.01 && apt-get update && apt-get install -y software-properties-common
 
-RUN locale-gen en_US.UTF-8
-ENV LANG en_US.UTF-8
-
-RUN add-apt-repository -y ppa:ondrej/php-7.0
+RUN LC_ALL=C.UTF-8 add-apt-repository -y ppa:ondrej/php
 
 RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 4F4EA0AAE5267A6C
 
